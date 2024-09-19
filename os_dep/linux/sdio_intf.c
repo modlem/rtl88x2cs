@@ -967,6 +967,7 @@ static int rtw_drv_init(
 	struct sdio_func *func,
 	const struct sdio_device_id *id)
 {
+	static int cnt = 0;
 	int status = _FAIL;
 #ifdef CONFIG_CONCURRENT_MODE
 	int i;
@@ -1009,6 +1010,12 @@ static int rtw_drv_init(
 #endif /* CONFIG_PLATFORM_INTEL_BYT */
 
 
+
+	if(cnt > 0)
+	{
+		goto exit;
+	}
+	cnt++;
 
 	dvobj = sdio_dvobj_init(func, id);
 	if (dvobj == NULL) {

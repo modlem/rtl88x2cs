@@ -20,7 +20,7 @@
 	#ifndef MAX_RECVBUF_SZ
 		#ifndef CONFIG_MINIMAL_MEMORY_USAGE
 			#ifdef CONFIG_PREALLOC_RX_SKB_BUFFER
-				#define MAX_RECVBUF_SZ (rtw_rtkm_get_buff_size()) /*depend rtkm*/
+				#define MAX_RECVBUF_SZ (rtw_rtkm_get_buff_size_b()) /*depend rtkm*/
 			#else
 				#define MAX_RECVBUF_SZ (32768)  /*32k*/
 			#endif

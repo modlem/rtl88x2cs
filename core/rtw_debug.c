@@ -4060,8 +4060,8 @@ int proc_get_rtkm_info(struct seq_file *m, void *v)
 #endif /* CONFIG_USB_HCI */
 
 	RTW_PRINT_SEL(m, "============[RTKM Info]============\n");
-	RTW_PRINT_SEL(m, "MAX_RTKM_NR_PREALLOC_RECV_SKB: %d\n", rtw_rtkm_get_nr_recv_skb());
-	RTW_PRINT_SEL(m, "MAX_RTKM_RECVBUF_SZ: %d\n", rtw_rtkm_get_buff_size());
+	RTW_PRINT_SEL(m, "MAX_RTKM_NR_PREALLOC_RECV_SKB: %d\n", rtw_rtkm_get_nr_recv_skb_b());
+	RTW_PRINT_SEL(m, "MAX_RTKM_RECVBUF_SZ: %d\n", rtw_rtkm_get_buff_size_b());
 
 	RTW_PRINT_SEL(m, "============[Driver Info]============\n");
 	RTW_PRINT_SEL(m, "NR_PREALLOC_RECV_SKB: %d\n", NR_PREALLOC_RECV_SKB);

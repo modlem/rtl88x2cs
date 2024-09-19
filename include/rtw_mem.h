@@ -31,11 +31,11 @@
 #define MAX_RTKM_NR_PREALLOC_RECV_SKB 16
 #endif /* !CONFIG_SDIO_HCI */
 
-u16 rtw_rtkm_get_buff_size(void);
-u8 rtw_rtkm_get_nr_recv_skb(void);
+u16 rtw_rtkm_get_buff_size_b(void);
+u8 rtw_rtkm_get_nr_recv_skb_b(void);
 struct u8 *rtw_alloc_revcbuf_premem(void);
-struct sk_buff *rtw_alloc_skb_premem(u16 in_size);
-int rtw_free_skb_premem(struct sk_buff *pskb);
+struct sk_buff *rtw_alloc_skb_premem_b(u16 in_size);
+int rtw_free_skb_premem_b(struct sk_buff *pskb);
 
 
 #endif /* __RTW_MEM_H__ */

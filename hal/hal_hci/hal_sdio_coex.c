@@ -23,12 +23,12 @@
 
 #ifdef CONFIG_SDIO_MULTI_FUNCTION_COEX
 
-int rtw_sdio_multi_state = SDIO_MULTI_WIFI;
-EXPORT_SYMBOL(rtw_sdio_multi_state);
+int rtw_sdio_multi_state_b = SDIO_MULTI_WIFI;
+EXPORT_SYMBOL(rtw_sdio_multi_state_b);
 
 bool ex_hal_sdio_multi_if_bus_available(PADAPTER adapter)
 {
-	return rtw_sdio_multi_state == SDIO_MULTI_WIFI;
+	return rtw_sdio_multi_state_b == SDIO_MULTI_WIFI;
 }
 
 #endif  /* CONFIG_SDIO_MULTI_FUNCTION_COEX */
