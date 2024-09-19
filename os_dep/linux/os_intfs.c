@@ -5456,47 +5456,47 @@ int rtw_resume_common(_adapter *padapter)
 }
 
 #ifdef CONFIG_GPIO_API
-u8 rtw_get_gpio(struct net_device *netdev, u8 gpio_num)
+u8 rtw_get_gpio_a(struct net_device *netdev, u8 gpio_num)
 {
 	_adapter *adapter = (_adapter *)rtw_netdev_priv(netdev);
 	return rtw_hal_get_gpio(adapter, gpio_num);
 }
-EXPORT_SYMBOL(rtw_get_gpio);
+EXPORT_SYMBOL(rtw_get_gpio_a);
 
-int  rtw_set_gpio_output_value(struct net_device *netdev, u8 gpio_num, bool isHigh)
+int  rtw_set_gpio_output_value_a(struct net_device *netdev, u8 gpio_num, bool isHigh)
 {
 	u8 direction = 0;
 	u8 res = -1;
 	_adapter *adapter = (_adapter *)rtw_netdev_priv(netdev);
 	return rtw_hal_set_gpio_output_value(adapter, gpio_num, isHigh);
 }
-EXPORT_SYMBOL(rtw_set_gpio_output_value);
+EXPORT_SYMBOL(rtw_set_gpio_output_value_a);
 
-int rtw_config_gpio(struct net_device *netdev, u8 gpio_num, bool isOutput)
+int rtw_config_gpio_a(struct net_device *netdev, u8 gpio_num, bool isOutput)
 {
 	_adapter *adapter = (_adapter *)rtw_netdev_priv(netdev);
 	return rtw_hal_config_gpio(adapter, gpio_num, isOutput);
 }
-EXPORT_SYMBOL(rtw_config_gpio);
-int rtw_register_gpio_interrupt(struct net_device *netdev, int gpio_num, void(*callback)(u8 level))
+EXPORT_SYMBOL(rtw_config_gpio_a);
+int rtw_register_gpio_interrupt_a(struct net_device *netdev, int gpio_num, void(*callback)(u8 level))
 {
 	_adapter *adapter = (_adapter *)rtw_netdev_priv(netdev);
 	return rtw_hal_register_gpio_interrupt(adapter, gpio_num, callback);
 }
-EXPORT_SYMBOL(rtw_register_gpio_interrupt);
+EXPORT_SYMBOL(rtw_register_gpio_interrupt_a);
 
-int rtw_disable_gpio_interrupt(struct net_device *netdev, int gpio_num)
+int rtw_disable_gpio_interrupt_a(struct net_device *netdev, int gpio_num)
 {
 	_adapter *adapter = (_adapter *)rtw_netdev_priv(netdev);
 	return rtw_hal_disable_gpio_interrupt(adapter, gpio_num);
 }
-EXPORT_SYMBOL(rtw_disable_gpio_interrupt);
+EXPORT_SYMBOL(rtw_disable_gpio_interrupt_a);
 
 #endif /* #ifdef CONFIG_GPIO_API */
 
 #ifdef CONFIG_APPEND_VENDOR_IE_ENABLE
 
-int rtw_vendor_ie_get_api(struct net_device *dev, int ie_num, char *extra,
+int rtw_vendor_ie_get_api_a(struct net_device *dev, int ie_num, char *extra,
 		u16 extra_len)
 {
 	int ret = 0;
@@ -5504,12 +5504,12 @@ int rtw_vendor_ie_get_api(struct net_device *dev, int ie_num, char *extra,
 	ret = rtw_vendor_ie_get_raw_data(dev, ie_num, extra, extra_len);
 	return ret;
 }
-EXPORT_SYMBOL(rtw_vendor_ie_get_api);
+EXPORT_SYMBOL(rtw_vendor_ie_get_api_a);
 
-int rtw_vendor_ie_set_api(struct net_device *dev, char *extra)
+int rtw_vendor_ie_set_api_a(struct net_device *dev, char *extra)
 {
 	return rtw_vendor_ie_set(dev, NULL, NULL, extra);
 }
-EXPORT_SYMBOL(rtw_vendor_ie_set_api);
+EXPORT_SYMBOL(rtw_vendor_ie_set_api_a);
 
 #endif
